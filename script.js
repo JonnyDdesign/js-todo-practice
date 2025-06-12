@@ -5,7 +5,7 @@ const taskList = document.getElementById("task-list");
 
 // Add task
 addBtn.addEventListener("click", () => {
-    const taskText = taskInput.ariaValueMax.trim();
+    const taskText = taskInput.value.trim();
 
     if (taskText === "") {
         alert("Please enter a task!");
@@ -15,9 +15,9 @@ addBtn.addEventListener("click", () => {
     const li = document.createElement("li");
     li.textContent = taskText;
 
-    const deleteBTN = document.createElement("button");
-    deleteBTN.textContent = "Delete";
-    deleteBTN.addEventListener("click", () => {
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener("click", () => {
         li.remove();
     });
 
