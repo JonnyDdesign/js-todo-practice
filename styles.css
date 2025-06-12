@@ -43,3 +43,21 @@ ul {
     padding: 0;
     margin-top: 20px;
 }
+
+li {
+    background: #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+  
+li button {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
