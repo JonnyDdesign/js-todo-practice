@@ -4,7 +4,7 @@ const taskInput = document.getElementById("task-input");
 const taskList = document.getElementById("task-list");
 
 // Add task
-addBtn.addEventListener("click", () => {
+function addTask() {
     const taskText = taskInput.value.trim();
 
     if (taskText === "") {
@@ -17,12 +17,19 @@ addBtn.addEventListener("click", () => {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
-    deleteBtn.addEventListener("click", () => {
-        li.remove();
-    });
+    deleteBtn.addEventListener("click", () => li.remove());
 
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
+
     taskInput.value = "";
     taskInput.focus();
+}
+
+addBtn.addEventListener("click", addTask);
+
+taskInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        addTask();
+    }
 });
