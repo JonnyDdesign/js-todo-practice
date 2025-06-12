@@ -9,14 +9,16 @@ body {
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: #9dfbfb;
     padding: 20px 30px;
+    border: 1px solid #000000;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    width: 500px;
 }
 
 h1 {
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -45,7 +47,7 @@ ul {
 }
 
 li {
-    background: #eee;
+    background: #61c3f1;
     padding: 10px;
     margin-bottom: 10px;
     display: flex;
