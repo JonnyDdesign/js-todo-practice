@@ -47,7 +47,8 @@ ul {
 }
 
 li {
-    background: #61c3f1;
+    background: #016767;
+    color: #ffffff;
     padding: 10px;
     margin-bottom: 10px;
     display: flex;
@@ -57,8 +58,8 @@ li {
 }
   
 li button {
-    background: crimson;
-    color: white;
+    background: #9dfbfb;
+    color: #000000;
     border: none;
     padding: 4px 8px;
     border-radius: 4px;
