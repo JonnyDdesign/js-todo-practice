@@ -47,7 +47,7 @@ ul {
 }
 
 li {
-    background: #016767;
+    background: #0f3131;
     color: #ffffff;
     padding: 10px;
     margin-bottom: 10px;
@@ -61,13 +61,12 @@ li button {
     background: #9dfbfb;
     color: #000000;
     border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .task-text.completed {
     text-decoration: line-through;
-    color: #888;
 }
 
 .task-checkbox {
