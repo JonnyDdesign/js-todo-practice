@@ -64,3 +64,12 @@ li button {
     padding: 4px 8px;
     border-radius: 4px;
 }
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-checkbox {
+    margin-right: 10px;
+}
