@@ -13,12 +13,25 @@ function addTask() {
     }
 
     const li = document.createElement("li");
-    li.textContent = taskText;
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("task-checkbox");
+
+    const span = document.createElement("span");
+    span.textContent = taskText;
+    span.classList.add("task-text");
+
+    checkbox.addEventListener("change", () => {
+        span.classList.toggle("completed");
+    });
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.addEventListener("click", () => li.remove());
 
+    li.appendChild(checkbox);
+    li.appendChild(span);
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
 
