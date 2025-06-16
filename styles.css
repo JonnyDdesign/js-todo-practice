@@ -69,9 +69,9 @@ li {
 }
   
 li button {
-    background: #ffffff;
-    color: #000000;
-    border: none;
+    background: #fb2e2e;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -82,4 +82,25 @@ li button {
 
 .task-checkbox {
     margin-right: 10px;
+}
+
+@keyframes chomp {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1.05) rotate(-8deg);
+    }
+    60% {
+        transform: scale(0.95) rotate(8deg);
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.chomped {
+    animation: chomp 0.5s forwards;
 }

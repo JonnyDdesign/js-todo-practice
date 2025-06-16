@@ -38,7 +38,18 @@ function renderTask(task) {
 
     checkbox.addEventListener("change", () => {
         task.completed = checkbox.checked;
-        span.classList.toggle("completed");
+
+        if (checkbox.checked) {
+            span.classList.toggle("completed");
+            span.classList.add("chomped");
+
+            setTimeout(() => {
+                span.classList.remove("chomped");
+            }, 500);
+        } else {
+            span.classList.remove("completed");
+        }
+        
         saveTasksToLocalStorage();
     });
 
