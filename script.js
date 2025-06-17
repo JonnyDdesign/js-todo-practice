@@ -40,17 +40,16 @@ function renderTask(task) {
         task.completed = checkbox.checked;
 
         if (checkbox.checked) {
-            span.classList.toggle("completed");
-            span.classList.add("chomped");
+            li.classList.add("completed", "chomped");
 
             setTimeout(() => {
-                span.classList.remove("chomped");
-            }, 500);
+                tasks = tasks.filter(t => t !== task);
+                li.remove();
+                saveTasksToLocalStorage();
+            }, 600);
         } else {
             span.classList.remove("completed");
         }
-        
-        saveTasksToLocalStorage();
     });
 
     const deleteBtn = document.createElement("button");
