@@ -42,13 +42,20 @@ function renderTask(task) {
         if (checkbox.checked) {
             li.classList.add("completed", "chomped");
 
+            // Create gator emoji
+            const gator = document.createElement("span");
+            gator.textContent = "🐊";
+            gator.classList.add("gator");
+            li.appendChild(gator);
+
+            // Wait for animation, then clean up
             setTimeout(() => {
                 tasks = tasks.filter(t => t !== task);
                 li.remove();
                 saveTasksToLocalStorage();
-            }, 600);
+            }, 1000);
         } else {
-            span.classList.remove("completed");
+            li.classList.remove("completed");
         }
     });
 
