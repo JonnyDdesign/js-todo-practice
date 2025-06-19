@@ -36,29 +36,6 @@ function renderTask(task) {
         span.classList.add("completed");
     }
 
-    checkbox.addEventListener("change", () => {
-        task.completed = checkbox.checked;
-
-        if (checkbox.checked) {
-            li.classList.add("completed", "chomped");
-
-            // Create gator emoji
-            const gator = document.createElement("span");
-            gator.textContent = "🐊";
-            gator.classList.add("gator");
-            li.appendChild(gator);
-
-            // Wait for animation, then clean up
-            setTimeout(() => {
-                tasks = tasks.filter(t => t !== task);
-                li.remove();
-                saveTasksToLocalStorage();
-            }, 1000);
-        } else {
-            li.classList.remove("completed");
-        }
-    });
-
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.addEventListener("click", () => {
@@ -71,6 +48,34 @@ function renderTask(task) {
     li.appendChild(span);
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
+
+    checkbox.addEventListener("change", () => {
+        task.completed = checkbox.checked;
+
+        if (checkbox.checked) {
+            li.classList.add("completed");
+
+            // Create gator emoji
+            const gator = document.createElement("span");
+            gator.textContent = "🐊";
+            gator.classList.add("gator");
+            li.insertBefore(gator, li.firstChild);
+
+            // Wait for gator slide to finish, then chomp
+            setTimeout(() => {
+                li.classList.add("chomped");
+
+                // Wait for chomp to finish, then remove
+                setTimeout (() => {
+                    tasks = tasks.filter(t => t !== task);
+                    li.remove();
+                    saveTasksToLocalStorage();
+                }, 1000);
+            }, 1000);
+        } else {
+            span.classList.remove("completed");
+        }
+    });
 }
 
 // Add new task

@@ -41,7 +41,7 @@ h1 {
 input[type="text"] {
     flex: 1;
     padding: 8px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 button {
@@ -52,6 +52,7 @@ button {
     font-size: 1rem;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 ul {
@@ -78,7 +79,6 @@ li button {
     background: #474973;
     color: #FFFFFF;
     padding: 5px 10px;
-    border-radius: 5px;
 }
 
 .task-text.completed {
@@ -101,29 +101,27 @@ li button {
 }
 
 .chomped {
-    animation: chomp 0.6s ease-out forwards;
+    animation: chomp 1s ease-out forwards;
 }
 
 @keyframes gator-slide {
     0% {
-        transform: translateX(-20px);
-        opacity: 0;
-    }
-    30% {
+        transform: translateX(0) translateY(-50%);
         opacity: 1;
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(500px) translateY(-50%);
         opacity: 0;
     }
 }
 
 .gator {
     position: absolute;
-    left: 0;
+    left: 0px;
     top: 50%;
     transform: translateY(-50%);
-    animation: gator-slide 0.8s ease forwards;
+    animation: gator-slide 2s ease forwards;
     font-size: 1.5rem;
     pointer-events: none;
+    z-index: 5;
 }
